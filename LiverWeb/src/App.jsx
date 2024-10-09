@@ -1,10 +1,28 @@
+import { useState } from 'react'
 import './App.css'
+import Input from './components/Input'
 
 function App() {
 
-  function handleOnChange(e) {
-    console.log(e.target.value)
-   }
+
+  const [value, setValue] = useState('')
+
+  function handleOnChange(field, value) {
+
+    switch (field) {
+        case 'name':
+            setName(value)
+            break
+
+        case 'password':
+            setPassword(value)
+            break
+
+        case 'mobile':
+            setMobile(value)
+            break
+    }
+}
 
   return (
     <>
@@ -12,9 +30,7 @@ function App() {
 
         <form className='flex justify-center items-center'>
 
-          <div>
-            <input type="text" onChange={handleOnChange} />
-          </div>
+          <Input placeHolder={'Enter Bucket Name'} onChange={(value) => { handleOnChange(value) }} />
         </form>
       </div>
     </>
