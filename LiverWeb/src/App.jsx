@@ -7,9 +7,20 @@ function App() {
 
   const { register, handleSubmit, formState: { error } } = useForm()
 
-  function submitValues(data) {
+  async function submitValues(data) {
 
     console.log(data)
+
+    const PREDICT_URL = 'http://localhost:3000/disease/predict-disease'
+    const res = await fetch(PREDICT_URL, {
+
+      method: 'POST',
+      headers: {
+
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
   }
 
   return (

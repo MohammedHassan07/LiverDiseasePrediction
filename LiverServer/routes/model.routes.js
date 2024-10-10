@@ -4,6 +4,6 @@ const { predictDisease } = require('../controller/predict.controller')
 
 const routes = express.Router()
 
-routes.get('/predict-disease', isEmpty, predictDisease)
+routes.post('/predict-disease', isEmpty, predictDisease)
 
 module.exports = routes

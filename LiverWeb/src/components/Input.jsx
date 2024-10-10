@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Input = ({ placeHolder, value, register, name, required }) => {
-    console.log(register)
+   
     return (
         <input
             placeholder={placeHolder}
